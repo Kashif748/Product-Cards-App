@@ -1,0 +1,17 @@
+@if(loading){
+<div class="loading-div">
+  <app-loader></app-loader>
+</div>
+}
+@if(error){
+<div>
+  {{error | json}}
+</div>
+}
+@if(products.length){
+<div class="product-grid">
+  @for(product of products; track product){
+  <app-product-card [product]="product"></app-product-card>
+  }
+</div>
+}
